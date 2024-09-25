@@ -51,7 +51,7 @@ def get_instance_ip(instance_id):
 # Install PyTorch and run the script
 def run_commands(instance_ip):
     # Copy the ddp.py script to the instance
-    scp_command = f"scp -i {key_file_path} -o StrictHostKeyChecking=no ddp.py ec2-user@{instance_ip}:/home/ec2-user/ddp.py"
+    scp_command = f"scp -i {key_file_path} -o StrictHostKeyChecking=no app.py ec2-user@{instance_ip}:/home/ec2-user/ddp.py"
     subprocess.run(scp_command, shell=True)
 
     # SSH into the instance and run commands
